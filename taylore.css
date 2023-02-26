@@ -1,0 +1,31 @@
+.btn-primary {
+    background-color: #ff06e5 !important;
+    color: #02d409 !important;
+    border-color: #000000 !important;
+}
+
+.btn-secondary{
+    color: #02d409 !important;
+    border-color: #02d409 !important;
+}
+
+.primary-text{
+    color: #02d409 !important;
+}
+
+.form-control-primary{
+    border-color: #02d409 !important;
+}
+
+.header-img{
+    width: 50% !important;
+}
+
+@font-face {
+    font-family:Who Asks Satan;
+    src: url(whoaskssatan.ttf);
+}
+
+h1{
+    font-family:who asks satan;
+}
