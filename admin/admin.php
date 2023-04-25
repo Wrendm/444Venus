@@ -1,4 +1,4 @@
-<?php include("partials/toolbar.php"); ?>
+<?php include("partials/navbar.php"); ?>
         <!-- Main Content Start -->
         <div class="main-content">
             <div class="wrapper">
