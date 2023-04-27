@@ -34,22 +34,45 @@
         $username = $_POST['username'];
         $password = $_POST['password'];
 
-        //TODO: add input validation
-
-        //SQL query
-        $sql = "INSERT INTO tbl_admin SET
-            full_name = '$fullname',
-            username = '$username',
-            password = '$password'
-        ";
-        //Execute query
-        $result = mysqli_query($conn, $sql) or die(mysqli_error());
-        if($result==1){
-            header('location'.homepage.'admin/manage-admin.php');
+        //input validation
+        $valid = 1;
+        //check that full name contains a space and isn't a number
+        if(!(str_contains($fullname, ' ') || !(preg_match("#^[a-zA-Z]+$#", $fullname)))){
+            echo "Name not a full name\n";
+            $valid = 0;
+        }else{
+            $fullname = trim($fullname);
         }
-        else{
-            $_SESSION['add'] = "Admin Addition Failed";
-            //TODO: add more helpful information 
+        //check that username is at least 3 characters
+        if(!(strlen($username) >= 3)){
+            echo "Username must be at least 3 characters\n";
+            $valid = 0;
+        }else{
+            $username = trim($username);
+        }
+        //check that password is at least 8 characters
+        if(!(strlen($password) >= 8)){
+            echo "Password must be at least 8 characters\n";
+            $valid = 0;
+        }else{
+            $password = trim($password);
+        }
+        //if all fields are valid, attempt to add the new admin
+        if($valid == 1){
+            //SQL query
+            $sql = "INSERT INTO tbl_admin SET
+                full_name = '$fullname',
+                username = '$username',
+                password = '$password'
+            ";
+            //Execute query
+            $result = mysqli_query($conn, $sql) or die(mysqli_error());
+            if($result){
+                header('Location:'.homepage.'admin/manage-admin.php');
+            }
+            else{
+                echo "Admin Addition Failed";
+            }
         }
     }
 ?>

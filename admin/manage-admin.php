@@ -4,18 +4,12 @@
             <div class="wrapper">
                 <h1>Manage Admin</h1>
                 <a href="add-admin.php" class="btn-primary">Add Admin</a>
-                <?php
-                    if(isset($_SESSION['add'])){
-                        echo $_SESSION['add'];
-                        unset($_SESSION);
-                    }
-                ?>
-                <table>
+                <table class="table">
                     <tr>
-                        <th>ID</th>
-                        <th>Full Name</th>
-                        <th>Username</th>
-                        <th>Permissions</th>
+                        <th scope="col">ID</th>
+                        <th scope="col">Full Name</th>
+                        <th scope="col">Username</th>
+                        <th scope="col">Permissions</th>
                     </tr>
                     <?php 
                         //retrieve admins from database
