@@ -1,5 +1,5 @@
 <?php include("partials/navbar.php"); ?>
-
+<!--TODO: Add styling to this page so it'll actually be useable in an intuitive way-->
 <div class="main-content">
     <h1>Add admin</h1>
     <form action="" method="POST">
@@ -33,13 +33,23 @@
         $fullname = $_POST['fullname'];
         $username = $_POST['username'];
         $password = $_POST['password'];
+
+        //TODO: add input validation
+
         //SQL query
-        $adminData = "INSERT INTO tbl_admin SET
+        $sql = "INSERT INTO tbl_admin SET
             full_name = '$fullname',
             username = '$username',
             password = '$password'
         ";
-    }else{
-
+        //Execute query
+        $result = mysqli_query($conn, $sql) or die(mysqli_error());
+        if($result==1){
+            header('location'.homepage.'admin/manage-admin.php');
+        }
+        else{
+            $_SESSION['add'] = "Admin Addition Failed";
+            //TODO: add more helpful information 
+        }
     }
 ?>
