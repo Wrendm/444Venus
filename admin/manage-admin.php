@@ -27,7 +27,6 @@
                                 $id = $admins['id'];
                                 $fullname = $admins['full_name'];
                                 $username = $admins['username'];
-                                echo $fullname;
                                 ?>
                                 <tr>
                                     <td><?php echo $id?></td>
