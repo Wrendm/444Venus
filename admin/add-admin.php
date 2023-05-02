@@ -35,24 +35,25 @@
         $password = $_POST['password'];
 
         //input validation
+        $failure = "";
         $valid = 1;
         //check that full name contains a space and isn't a number
         if(!(str_contains($fullname, ' ') || !(preg_match("#^[a-zA-Z]+$#", $fullname)))){
-            echo "Name not a full name\n";
+            $failure .= "Name not a full name\n";
             $valid = 0;
         }else{
             $fullname = trim($fullname);
         }
         //check that username is at least 3 characters
         if(!(strlen($username) >= 3)){
-            echo "Username must be at least 3 characters\n";
+            $failure .= "Username must be at least 3 characters\n";
             $valid = 0;
         }else{
             $username = trim($username);
         }
         //check that password is at least 8 characters
         if(!(strlen($password) >= 8)){
-            echo "Password must be at least 8 characters\n";
+            $failure .= "Password must be at least 8 characters\n";
             $valid = 0;
         }else{
             $password = trim($password);
@@ -68,11 +69,16 @@
             //Execute query
             $result = mysqli_query($conn, $sql) or die(mysqli_error());
             if($result){
-                header('Location:'.homepage.'admin/manage-admin.php');
+                $_SESSION['add'] = "Admin Addition of $fullname Successful";
+                header('Location:'.HOMEPAGE.'admin/manage-admin.php');
             }
             else{
-                echo "Admin Addition Failed";
+                $_SESSION['add'] = "Admin Addition of $fullname Failed";
+                header('Location:'.HOMEPAGE.'admin/manage-admin.php');
             }
+        }else{
+            $_SESSION['failure'] = $failure;
+            header('Location:'.HOMEPAGE.'admin/manage-admin.php');
         }
     }
 ?>

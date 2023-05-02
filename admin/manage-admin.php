@@ -3,13 +3,31 @@
         <div class="main-content">
             <div class="wrapper">
                 <h1>Manage Admin</h1>
+                <?php //TODO: add styling for this section
+                    if(isset($_SESSION['add'])){
+                        echo $_SESSION['add'];
+                        unset($_SESSION['add']);
+                    }
+                    if(isset($_SESSION['delete'])){
+                        echo $_SESSION['delete'];
+                        unset($_SESSION['delete']);
+                    }
+                    if(isset($_SESSION['update'])){
+                        echo $_SESSION['update'];
+                        unset($_SESSION['update']);
+                    }
+                    if(isset($_SESSION['failure'])){
+                        echo $_SESSION['failure'];
+                        unset($_SESSION['failure']);
+                    }
+                ?>
                 <a href="add-admin.php" class="btn-primary">Add Admin</a>
                 <table class="table">
                     <tr>
                         <th scope="col">ID</th>
                         <th scope="col">Full Name</th>
                         <th scope="col">Username</th>
-                        <th scope="col">Permissions</th>
+                        <th scope="col">Options</th>
                     </tr>
                     <?php 
                         //retrieve admins from database
@@ -27,8 +45,10 @@
                                     <td><?php echo $fullname?></td>
                                     <td><?php echo $username?></td>
                                     <td>
-                                        <a href="add-admin.php" class="btn-primary">Add Admin</a>
-                                        <a href="#" class="btn-primary">Delete Admin</a>
+                                        <a href="<?php echo HOMEPAGE;?>admin/update-admin.php?id=<?php echo $id;?>" class="btn-primary">Update Admin</a>
+                                        <br>
+                                        <!--TODO: add an "are you sure?" popup-->
+                                        <a href="<?php echo HOMEPAGE;?>admin/delete-admin.php?id=<?php echo $id;?>" class="btn-primary">Delete Admin</a>
                                     </td>
                                 </tr>
                                 <?php
