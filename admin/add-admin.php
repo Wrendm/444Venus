@@ -67,7 +67,7 @@
                 password = '$password'
             ";
             //Execute query
-            $result = mysqli_query($conn, $sql) or die(mysqli_error());
+            $result = mysqli_query($conn, $sql);
             if($result){
                 $_SESSION['add'] = "Admin Addition of $fullname Successful";
                 header('Location:'.HOMEPAGE.'admin/manage-admin.php');

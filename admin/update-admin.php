@@ -43,14 +43,13 @@
         username = '$newUsername'
         WHERE id='$id'
         ";
-
         $result = mysqli_query($conn,$sql);
         //TODO: create a function in another file for all of these redundant error messages
         if($result == true){
-            $_SESSION['update'] = "Admin with id $id updated successfully";
+            $_SESSION['update'] = "Admin with id $id updated successfully\n";
             header('Location:'.HOMEPAGE.'admin/manage-admin.php');
         }else{
-            $_SESSION['update'] = "Admin with id $id could not be updated";
+            $_SESSION['update'] = "Admin with id $id could not be updated\n";
             header('Location:'.HOMEPAGE.'admin/manage-admin.php');
         }
     }

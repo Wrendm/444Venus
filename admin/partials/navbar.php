@@ -1,4 +1,6 @@
-<?php include('C:\xampp\htdocs\444Venus\admin\config\constants.php');?>
+<?php 
+include('C:\xampp\htdocs\444Venus\admin\config\constants.php');
+include('.\partials\check-login.php');?>
 
 <html>
     <head>
@@ -16,6 +18,7 @@
                         <li class="nav-item"><a class="nav-link" href="/444Venus/admin/manage-category.php">Categories</a></li>     
                         <li class="nav-item"><a class="nav-link" href="/444Venus/admin/manage-items.php">Items</a></li>
                         <li class="nav-item"><a class="nav-link" href="/444Venus/admin/manage-orders.php">Orders</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/444Venus/admin/logout.php">Log Out</a></li>
                     </ul>
                 </div>
             </div>

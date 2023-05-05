@@ -3,7 +3,7 @@
         <div class="main-content">
             <div class="wrapper">
                 <h1>Manage Admin</h1>
-                <?php //TODO: add styling for this section
+                <?php //TODO: add styling for this section, maybe a loop to make it more efficient
                     if(isset($_SESSION['add'])){
                         echo $_SESSION['add'];
                         unset($_SESSION['add']);
@@ -15,6 +15,10 @@
                     if(isset($_SESSION['update'])){
                         echo $_SESSION['update'];
                         unset($_SESSION['update']);
+                    }
+                    if(isset($_SESSION['login'])){
+                        echo $_SESSION['login'];
+                        unset($_SESSION['login']);
                     }
                     if(isset($_SESSION['failure'])){
                         echo $_SESSION['failure'];
