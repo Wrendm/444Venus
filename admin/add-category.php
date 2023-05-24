@@ -61,8 +61,8 @@
         if(isset($_FILES['image']['name'])){
             $image_name=$_FILES['image']['name'];
             $source_path=$_FILES['image']['tmp_name'];
-            $ext = end(explode('.', $image_name));
-            $image_name = $title.'.'.$ext;
+            //$ext = end(explode('.', $image_name));
+            //$image_name = $title.'.'.$ext;
             $destination_path= "../images/categories/".$image_name;
             $upload = move_uploaded_file($source_path, $destination_path);
             if($upload==False){
