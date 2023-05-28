@@ -12,10 +12,13 @@
               $image = $row['image_name'];
             ?>
             <div class="px-0 mx-1 my-3 card">
+              <a href="/444Venus/showbycategory.php?category=<?php echo $id;?>">
               <img src="images/categories/<?php echo $image?>" class="d-block card-img-top" alt="<?php echo $title?>">
               <div class="card-body text-center bg-dark">
-                <h5 class="card-text text-light"><?php echo strtoupper($title)?></h5></div>
+                <h5 class="card-text text-light"><?php echo strtoupper($title)?></h5>
               </div>
+              </a>
+            </div>
             <?php 
             }
           }else{

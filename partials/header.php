@@ -16,10 +16,8 @@
             <ul class="nav list-group-horizontal">
                 <!--TODO: Add dropdown menu for categories -->
               <li><a href="/444Venus/index.php" class="nav-link px-2 primary-text">Home</a></li>
-              <!-- WHERE active="yes" -->
-              <li><a href="/444Venus/available.php" class="nav-link px-2 primary-text">Available</a></li>
-              <!-- WHERE active="no" --> 
-              <li><a href="/444Venus/past.php" class="nav-link px-2 primary-text">Past Work</a></li>     
+              <li><a href="/444Venus/store.php?available=1" class="nav-link px-2 primary-text">Available</a></li>
+              <li><a href="/444Venus/store.php?available=0" class="nav-link px-2 primary-text">Past Work</a></li>     
               <li><a href="/444Venus/about.php" class="nav-link px-2 primary-text">About</a></li>
             </ul>
           </div>

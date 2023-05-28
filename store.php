@@ -2,8 +2,11 @@
 <main class="container">
     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 justify-content-evenly">
         <?php
-            //I know there's a better way to do this, and I'll do it once I get the minimum viable product looking decent
-            $sql = "SELECT * FROM tbl_item WHERE active='Yes'";
+            if($_GET['available']){
+                $sql = "SELECT * FROM tbl_item WHERE active='Yes'";
+            }else{
+                $sql = "SELECT * FROM tbl_item WHERE active='No'";
+            }
             $result = mysqli_query($conn, $sql);
             if(mysqli_num_rows($result) > 0){
                 while($row=mysqli_fetch_assoc($result)){
@@ -27,5 +30,5 @@
                 echo "<div class='text-center'><h1>No items for sale to show!</h1></div>";
             }
         ?>
-      </div>
+    </div>
 <?php include('./partials/footer.php');?>

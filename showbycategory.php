@@ -2,8 +2,8 @@
 <main class="container">
     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 justify-content-evenly">
         <?php
-            //get all the categories for the cards from the database
-            $sql = "SELECT * FROM tbl_item WHERE active='No'";
+            $category = $_GET['category'];
+            $sql = "SELECT * FROM tbl_item WHERE category_id=$category";
             $result = mysqli_query($conn, $sql);
             if(mysqli_num_rows($result) > 0){
                 while($row=mysqli_fetch_assoc($result)){
@@ -24,8 +24,8 @@
                     <?php 
                 }
             }else{
-                echo "<div class='text-center'><h1>No sold items to show!</h1></div>";
+                echo "<div class='text-center'><h1>No items for sale to show!</h1></div>";
             }
         ?>
-      </div>
+    </div>
 <?php include('./partials/footer.php');?>

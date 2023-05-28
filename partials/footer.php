@@ -1,9 +1,9 @@
-<footer class="py-3 my-4 footer fixed-bottom">
+<footer class="footer mt-auto py-3 my-4">
       <ul class="nav justify-content-center border-bottom pb-3 mb-3">
-        <li class="nav-item"><a href="/444Venus/index.html" class="nav-link px-2 text-muted">Home</a></li>
-        <li class="nav-item"><a href="/444Venus/available.php" class="nav-link px-2 text-muted">Available</a></li>
-        <li class="nav-item"><a href="/444Venus/past.php" class="nav-link px-2 text-muted">Past Work</a></li>
-        <li class="nav-item"><a href="/444Venus/about.html" class="nav-link px-2 text-muted">About</a></li>
+        <li class="nav-item"><a href="/444Venus/index.php" class="nav-link px-2 primary-text">Home</a></li>
+        <li><a href="/444Venus/store.php?available=1" class="nav-link px-2 primary-text">Available</a></li>
+        <li><a href="/444Venus/store.php?available=0" class="nav-link px-2 primary-text">Past Work</a></li>     
+        <li class="nav-item"><a href="/444Venus/about.php" class="nav-link px-2 primary-text">About</a></li>
       </ul>
       <p class="text-center text-muted">&copy; 2022 444Venus, &copy; 2022 Wren Miles</p>
     </footer>
