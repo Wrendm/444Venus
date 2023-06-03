@@ -21,6 +21,11 @@
     width: 50% !important;
 }
 
+.category-card-img{
+    width:200px !important;
+    object-fit: cover !important;
+}
+
 @font-face {
     font-family:Who Asks Satan;
     src: url(whoaskssatan.ttf);

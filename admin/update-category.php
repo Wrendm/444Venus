@@ -111,7 +111,7 @@
                 title = '$title',
                 image_name = '$new_img',
                 featured = '$featured',
-                active = '$active',
+                active = '$active'
                 WHERE id=$id
             ";
             //Execute query

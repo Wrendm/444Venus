@@ -154,7 +154,7 @@
                 price = '$price',
                 category_id = '$category',
                 featured = '$featured',
-                active = '$active',
+                active = '$active'
                 WHERE id=$id
             ";
             //Execute query
